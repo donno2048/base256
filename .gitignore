@@ -1,3 +1,4 @@
 build
 dist
-nothingness.egg-info
+base256.egg-info
+base256/__pycache__
