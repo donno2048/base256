@@ -6,25 +6,34 @@ def main():
         encode_type = button_dialog(title='Encode Type', text='What type of encode would you like to perform?', buttons=[('Hex', 0), ('File', 1), ('String', 2)]).run()
         if encode_type == 0:
             # Hex
-            message_dialog(title='Encoded String', text=encode(input_dialog(title='Hex Value', text='What hex value would you like to encode?').run())).run()
+            output = encode(input_dialog(title='Hex Value', text='What hex value would you like to encode?').run())
+            message_dialog(title='Encoded String', text=output).run()
+            print(output)
         elif encode_type == 1:
             # File
-            message_dialog(title='Encoded String', text=encode_file(input_dialog(title='File Path', text='What file would you like to encode?').run())).run()
+            output = encode_file(input_dialog(title='File Path', text='What file would you like to encode?').run())
+            message_dialog(title='Encoded String', text=output).run()
+            print(output)
         elif encode_type == 2:
             # String
-            message_dialog(title='Encoded String', text=encode_string(input_dialog(title='String', text='What string would you like to encode?').run())).run()
+            output = encode_string(input_dialog(title='String', text='What string would you like to encode?').run())
+            message_dialog(title='Encoded String', text=output).run()
+            print(output)
     else:
         # Decode
         decode_type = button_dialog(title='Decode Type', text='What type of decode would you like to perform?', buttons=[('Hex', 0), ('File', 1), ('String', 2)]).run()
         if decode_type == 0:
             # Hex
-            message_dialog(title='Decoded Hex', text=decode(input_dialog(title='Encoded String', text='What encoded string would you like to decode?').run())).run()
+            output = decode(input_dialog(title='Encoded String', text='What encoded string would you like to decode?').run())
+            message_dialog(title='Decoded Hex', text=output).run()
+            print(output)
         elif decode_type == 1:
             # File
-            message_dialog(title='Decoded Hex', text=decode_file(input_dialog(title='Encoded String', text='What encoded string would you like to decode?').run(), input_dialog(title='File Path', text='What file would you like to decode to?').run())).run()
+            decode_file(input_dialog(title='Encoded String', text='What encoded string would you like to decode?').run(), input_dialog(title='File Path', text='What file would you like to decode to?').run())
         elif decode_type == 2:
             # String
-            message_dialog(title='Decoded String', text=decode_string(input_dialog(title='Encoded String', text='What encoded string would you like to decode?').run())).run()
+            output = decode_string(input_dialog(title='Encoded String', text='What encoded string would you like to decode?').run())
+            message_dialog(title='Decoded String', text=output).run()
+            print(output)
 if __name__ == '__main__':
     main()
-# EOF

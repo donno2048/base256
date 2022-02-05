@@ -15,7 +15,7 @@ def encode_file(file_path: str) -> str:
     assert isinstance(file_path, str), "x must be a string"
     assert isfile(file_path), "x must be a file"
     return encode("".join("%.2x" % i for i in open(file_path, "rb").read()))
-def decode_file(encoded_string: str, filepath: str) -> str:
+def decode_file(encoded_string: str, filepath: str) -> None:
     assert isinstance(encoded_string, str), "x must be a string"
     open(filepath, "wb").write(bytes.fromhex(decode(encoded_string)))
 def encode_string(string: str, encoding: str = "utf-8") -> str:
